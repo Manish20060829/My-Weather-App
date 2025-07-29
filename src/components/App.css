@@ -171,7 +171,7 @@ body {
   
 }
 
-.Todaycontainer{
+.Todaycontainerstats{
   position: relative;
   height: 16rem;
   display: grid;
@@ -183,6 +183,14 @@ body {
   
   
   
+
+}
+
+#locationname {
+  font-family: "Spline Sans", sans-serif;
+  font-weight: 450;
+  margin-left: 1rem;
+
 
 }
 

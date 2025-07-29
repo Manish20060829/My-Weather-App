@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import useIcon from "../hooks/useIcon"
 
 
-function Todaydisplay( { weatherdata } ){
+function Todaydisplay( { weatherdata, currentcityname } ){
 
     
     const [  source  ] = useIcon((weatherdata?.current?.weather_code ?? {src: ""}));
@@ -14,8 +14,10 @@ function Todaydisplay( { weatherdata } ){
    
 
     
-    return(
-        <div className = "Todaycontainer">
+    return(<div className = "Todaycontainer">
+        <p id = "locationname">{ currentcityname }</p>
+
+        <div className = "Todaycontainerstats">
            
            {
             source?.src?.length ? 
@@ -33,7 +35,7 @@ function Todaydisplay( { weatherdata } ){
            (<p id = "weatherstats">
 
                 
-               { "Wind Speed: " + weatherdata?.current?.wind_speed_10m + "km/h"  }
+               { "Wind Speed: " + weatherdata?.current?.wind_speed_10m + " km/h"  }
                <br />
                { "Percipitation: " + weatherdata?.current?.precipitation + "mm" }
                
@@ -54,6 +56,7 @@ function Todaydisplay( { weatherdata } ){
                 <span id = "celsius2">{(weatherdata?.current?.apparent_temperature ? "°C" : "" )} </span> </p>
            
 
+        </div>
         </div>
 
     )

@@ -3,40 +3,13 @@ import { useEffect, useState } from "react"
 import SearchDropdown from "./Searchdropdown";
 
 
-function Nav( { Setcords } ){
-    const [city, setCity] = useState("");
+function Nav( { Setcords, city, setCity, cityfilter, setcurrentcityname } ){
+    
     const [displaysearchbox, Setdisplaysearchbox] = useState(false);
 
-    const [debouncecity, Setdebouncecity ] = useState([]);
-
-    const [ data ] = useFetch(`https://photon.komoot.io/api?q=${debouncecity}`);
-
-    const [ cityfilter, Setcityfilter ] = useState([]);
-
-    
     
 
-    
-
-    useEffect(() => {
-
-      Setcityfilter((data.features || [] ).filter((f) =>  { return f.properties.type === "city"|| f.properties.type === "district"} ))
-
-    }, [data])
-
-     useEffect(() => {
-
-      console.log(data)
-
-    }, [data])
-
-
-    useEffect(() => { 
-      const id = setTimeout(() => {
-      Setdebouncecity(city)
-    }, 1000);       
-    return () => clearTimeout(id); }, [city]);
-
+   
     
 
     return(
@@ -86,6 +59,7 @@ function Nav( { Setcords } ){
          Setcords=  { Setcords }
          setCity =  { setCity }
          Setdisplaysearchbox = { Setdisplaysearchbox }
+         setcurrentcityname = { setcurrentcityname }
          
          
 

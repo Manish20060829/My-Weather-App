@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 
 
-function SearchDropdown({ data, Setcords, setCity, Setdisplaysearchbox }) {
+function SearchDropdown({ data, Setcords, setCity, Setdisplaysearchbox, setcurrentcityname }) {
     
     
    
@@ -25,6 +25,7 @@ function SearchDropdown({ data, Setcords, setCity, Setdisplaysearchbox }) {
             Setcords([e.target.dataset.lat, e.target.dataset.lon])
             setCity("")
             Setdisplaysearchbox(false)
+            setcurrentcityname(e.target.dataset.location)
 
         }}
 
@@ -32,6 +33,7 @@ function SearchDropdown({ data, Setcords, setCity, Setdisplaysearchbox }) {
         
         data-lat = {JSON.stringify(location.geometry.coordinates[1])}
         data-lon = {JSON.stringify(location.geometry.coordinates[0])}
+        data-location = {`${location.properties.name}${location.properties.country  ? "," : "" } ${(location.properties.state  || location.properties.county || "")}${location.properties.state && location.properties.state  ? "," : "" }  ${location.properties.country || ""}`}
 
         >
 
