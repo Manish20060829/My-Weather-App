@@ -427,6 +427,14 @@ link{
    font-size: 10rem;
 }
 
+#defaulttext{
+  font-size: 8rem;
+  text-align: center;
+  font-family: "IBM Plex Sans", sans-serif;
+  top: 50%;
+  transform: translateY(50%);
+}
+
 
 
 

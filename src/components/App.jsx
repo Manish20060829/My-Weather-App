@@ -9,7 +9,8 @@ import Daily from './Daily';
 
 function App() {
 
- 
+
+
 const [ cords, Setcords] = useState([]);
 const [ weatherdata ] = useFetch(`https://api.open-meteo.com/v1/forecast?latitude=${cords[0]}&longitude=${cords[1]}&daily=weather_code,apparent_temperature_mean,temperature_2m_mean,precipitation_probability_mean&minutely_15=temperature_2m&hourly=weather_code&hourly=temperature_2m,apparent_temperature,precipitation_probability&current=temperature_2m&current=weather_code&current=apparent_temperature&current=wind_speed_10m,precipitation&current=relative_humidity_2m&timezone=auto&past_hours=0&forecast_days=7`)
 
@@ -49,6 +50,7 @@ useEffect(() => {
 
   return (
     <>
+
    <Nav 
    Setcords = { Setcords }
    city = { city }
@@ -56,6 +58,10 @@ useEffect(() => {
    setCity= { setCity }
    setcurrentcityname = {setcurrentcityname}
    />
+
+   { currentcityname.length ? 
+   (
+   <>
    <div id = "hourlyandtodaycontainer">
    <Todaydisplay 
    currentcityname = { currentcityname }
@@ -67,10 +73,10 @@ useEffect(() => {
    />
    </div>
   <Daily 
-  
   weatherdata = { weatherdata }
   
-  />
+  /> </> )  : <p id = "defaulttext">Please enter a city...</p> }
+   
    
    </>
    

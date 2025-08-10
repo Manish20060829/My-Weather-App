@@ -2,7 +2,7 @@
 
 
 
-function SearchDropdown({ data, Setcords, setCity, Setdisplaysearchbox, setcurrentcityname }) {
+function SearchDropdown({ data, Setcords, setCity, Setdisplaysearchbox, setcurrentcityname}) {
     
     
    
@@ -26,6 +26,7 @@ function SearchDropdown({ data, Setcords, setCity, Setdisplaysearchbox, setcurre
             setCity("")
             Setdisplaysearchbox(false)
             setcurrentcityname(e.target.dataset.location)
+            
 
         }}
 

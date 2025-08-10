@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import SearchDropdown from "./Searchdropdown";
 
 
-function Nav( { Setcords, city, setCity, cityfilter, setcurrentcityname } ){
+function Nav( { Setcords, city, setCity, cityfilter, setcurrentcityname} ){
     
     const [displaysearchbox, Setdisplaysearchbox] = useState(false);
 
@@ -44,7 +44,7 @@ function Nav( { Setcords, city, setCity, cityfilter, setcurrentcityname } ){
             setCity("")
             Setdisplaysearchbox(false)
             setcurrentcityname(`${cityfilter[0].properties.name}${cityfilter[0].properties.country  ? "," : "" } ${(cityfilter[0].properties.state  || cityfilter[0].properties.county || "")}${cityfilter[0].properties.state && cityfilter[0].properties.state  ? "," : "" }  ${cityfilter[0].properties.country || ""}`)
-
+            
         }}
 
         >
