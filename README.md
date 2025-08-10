@@ -6,18 +6,18 @@ This is  a weather app created using React and Vite. This app lets your search a
 
 ## How to run
 
-1. First, Clone the repo
+1. First, Clone the repo with
 
 `git clone https://github.com/Manish20060829/My-Weather-App.git`
 
-2. Install dependencies
+2. Install dependencies in your folder's terminal with
 
 `npm install`
 
-3. Run the code
+3. Run the code using
 
 `npm run dev`
 
-4. Copy and paste the local link into your browser in the terminal
+4. Copy and paste the local link into your browser from the terminal
 
 
