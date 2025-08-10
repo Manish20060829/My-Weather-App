@@ -38,7 +38,15 @@ function Nav( { Setcords, city, setCity, cityfilter, setcurrentcityname } ){
         />
         <button
         id = "searchbutton"
-        
+        onClick={() => { 
+            
+            Setcords([JSON.stringify(cityfilter[0].geometry.coordinates[1]), JSON.stringify(cityfilter[0].geometry.coordinates[0])])
+            setCity("")
+            Setdisplaysearchbox(false)
+            setcurrentcityname(`${cityfilter[0].properties.name}${cityfilter[0].properties.country  ? "," : "" } ${(cityfilter[0].properties.state  || cityfilter[0].properties.county || "")}${cityfilter[0].properties.state && cityfilter[0].properties.state  ? "," : "" }  ${cityfilter[0].properties.country || ""}`)
+
+        }}
+
         >
          
         <img 

@@ -40,11 +40,16 @@ const militarytimearray = [
 
     let displayapparenttemp = weatherdata?.hourly?.apparent_temperature[i]
 
+    let displaypercent = weatherdata?.hourly?.precipitation_probability[i]
+
+    
+
     array.push({
       time: displaytime,
       iconcode: displayiconcode,
       temp: displaytemp,
       apparenttemp: displayapparenttemp,
+      percipatationpercent: displaypercent,
       id: i
 
     });
@@ -76,6 +81,7 @@ return(
       key = { value.id }
       temp = {  value.temp }
       apparenttemp= { value.apparenttemp }
+      percipatationpercent = {value.percipatationpercent}
       type = "hour"
 
 

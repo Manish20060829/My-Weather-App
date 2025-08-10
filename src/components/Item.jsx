@@ -1,6 +1,6 @@
 import useIcon from "../hooks/useIcon"
 
-function Item({iconcode, time, temp, apparenttemp, type }){
+function Item({iconcode, time, temp, apparenttemp, type, percipatationpercent }){
 
     const [  source  ] = useIcon(iconcode);
 
@@ -14,6 +14,7 @@ function Item({iconcode, time, temp, apparenttemp, type }){
         
         />
         <p className="temp">{Math.round(temp)}<span className="celsius3"> °C</span></p>
+        <p className="rainpercent">{ "💧" + percipatationpercent + "%"} </p>
         <p className="apptemp">{"Feels like " + Math.round(apparenttemp)}</p>
                 
         </div>

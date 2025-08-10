@@ -44,11 +44,14 @@ const daywords = [
 
     let displayapparenttemp = weatherdata?.daily?.apparent_temperature_mean[i]
 
+    let displaypercent = weatherdata?.daily?.precipitation_probability_mean[i]
+
     array.push({
       day: displayday,
       iconcode: displayiconcode,
       temp: displaytemp,
       apparenttemp: displayapparenttemp,
+      percipatationpercent: displaypercent,
       id: i
 
     });
@@ -74,6 +77,7 @@ const daywords = [
       key = { value.id }
       temp = {  value.temp }
       apparenttemp= { value.apparenttemp }
+      percipatationpercent = {value.percipatationpercent}
       type = "day"
 
 
