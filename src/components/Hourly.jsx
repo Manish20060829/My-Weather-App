@@ -6,7 +6,7 @@ import Item from "./Item"
 
 function Hourly({ weatherdata }){
 
-
+const [hourlyarray, sethourlyarray] = useState([]);
 
 
 useEffect(() => {
@@ -33,7 +33,23 @@ const militarytimearray = [
     })
 
     let displaytime = displaytimearray[index]
-    console.log(displaytime)
+    
+    let displayiconcode = weatherdata?.hourly?.weather_code[i]
+
+    let displaytemp = weatherdata?.hourly?.temperature_2m[i]
+
+    let displayapparenttemp = weatherdata?.hourly?.apparent_temperature[i]
+
+    array.push({
+      time: displaytime,
+      iconcode: displayiconcode,
+      temp: displaytemp,
+      apparenttemp: displayapparenttemp,
+      id: i
+
+    });
+
+    sethourlyarray(array);
 
 
     
@@ -45,14 +61,32 @@ const militarytimearray = [
 
 
 return(
-    <div id="hourcontainer">
+    <div id = "hourcontainer">
+    <p id = "hourheading">Hourly</p> 
+    <div id="hourlistcontainer">
 
-      <p id = "hourheading">Hourly</p> 
-      <div id = "hourlist">
       
-       
+      <div id = "hourlist">
+      {hourlyarray.map((value) => (
+
+      <Item
+      
+      iconcode = { value.iconcode }
+      time = { value.time }
+      key = { value.id }
+      temp = {  value.temp }
+      apparenttemp= { value.apparenttemp }
+
+
+      /> 
+
+
+
+      ))
+         }
       </div>
         
+    </div>
     </div>
 
 )

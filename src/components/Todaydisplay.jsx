@@ -28,7 +28,7 @@ function Todaydisplay( { weatherdata, currentcityname } ){
            />)
             : null
             }
-           <p id = "currenttemp">{  Math.round(weatherdata?.current?.temperature_2m) ? ((Math.round(weatherdata?.current?.temperature_2m) ?? "")) : null } <span id = "celsius">  { (weatherdata?.current?.temperature_2m ? "°C" : "" )} </span>  </p> 
+           <p id = "currenttemp">{  Math.round(weatherdata?.current?.temperature_2m) ? ((Math.round(weatherdata?.current?.temperature_2m) ?? "")) : null } <span className = "celsius">  { (weatherdata?.current?.temperature_2m ? "°C" : "" )} </span>  </p> 
            
             { (weatherdata !== "")    ?
 
@@ -53,7 +53,7 @@ function Todaydisplay( { weatherdata, currentcityname } ){
         
                 { 
                 Math.round(weatherdata?.current?.apparent_temperature) ? (weatherdata?.current?.apparent_temperature ? "Feels like " : " " ) + Math.round(weatherdata?.current?.apparent_temperature ?? "") : null  }
-                <span id = "celsius2">{(weatherdata?.current?.apparent_temperature ? "°C" : "" )} </span> </p>
+                </p>
            
 
         </div>
