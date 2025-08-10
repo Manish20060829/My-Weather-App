@@ -1,20 +1,20 @@
 import useIcon from "../hooks/useIcon"
 
-function Item({iconcode, time, temp, apparenttemp }){
+function Item({iconcode, time, temp, apparenttemp, type }){
 
     const [  source  ] = useIcon(iconcode);
 
 
     return(
-        <div className = "houritem">
-        <p className="hourtimetext">{time}</p>
+        <div className = {"item-list-" + type}>
+        <p className="timetext">{time}</p>
         <img
-        className= "houritemimg"
+        className= "itemimg"
         src = { source?.src }
         
         />
-        <p className="hourtemp">{Math.round(temp)}<span className="celsius3"> °C</span></p>
-        <p className="hourapptemp">{"Feels like " + Math.round(apparenttemp)}</p>
+        <p className="temp">{Math.round(temp)}<span className="celsius3"> °C</span></p>
+        <p className="apptemp">{"Feels like " + Math.round(apparenttemp)}</p>
                 
         </div>
 

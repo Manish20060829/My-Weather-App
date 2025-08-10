@@ -76,6 +76,7 @@ return(
       key = { value.id }
       temp = {  value.temp }
       apparenttemp= { value.apparenttemp }
+      type = "hour"
 
 
       /> 

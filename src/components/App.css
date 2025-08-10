@@ -241,7 +241,7 @@ body {
 
 }
 
-.houritem {
+.item-list-hour {
   width: 7.5rem;
   height: 16rem;
   display: flex;
@@ -258,12 +258,39 @@ body {
 
 }
 
-.houritem:first-child{
+.item-list-hour:first-child{
   border-left: none;
 
 }
 
-.houritem:last-child{
+.item-list-hour:last-child{
+  border-right: none;
+  
+}
+
+.item-list-day {
+  width: 7.5rem;
+  height: 16rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+  border-left: solid rgb(198, 195, 195) 1px ;
+  border-right: solid rgb(198, 195, 195) 1px ;
+  padding-inline: 3.2rem;
+  position: relative;
+  bottom: 0.15rem;
+  
+
+
+}
+
+.item-list-day:first-child{
+  border-left: none;
+
+}
+
+.item-list-day:last-child{
   border-right: none;
   
 }
@@ -271,6 +298,18 @@ body {
 #hourlist{
   display: flex;
   flex-direction: row;
+  
+  
+}
+
+#dailylist{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 2rem;
+  
+  
+
   
   
 }
@@ -289,7 +328,17 @@ body {
 
 }
 
-.houritemimg{
+#dailylistcontainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+
+}
+
+.itemimg{
   width: 4rem;
   height: 4rem;
   filter: brightness(0.93);
@@ -299,19 +348,30 @@ body {
   width: 100%;
   
   
+  
+  
 }
 
-.hourtimetext{
+#daycontainer{
+  width: 100%;
+  
+  
+  
+  
+}
+
+.timetext{
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 450;
   margin: 0;
 
 }
-.hourtemp{
+
+.temp{
   font-family: 'DM Sans', sans-serif;
   font-weight: 450;
-  position: relative;
-  left: 0.25rem 
+  
+  
   
 }
 
@@ -320,17 +380,28 @@ body {
   font-size: 0.55rem;
   margin: 0;
   bottom: 0.35rem; 
-  right: 0.15rem; 
+  
 
   
 }
 
-.hourapptemp{
+.apptemp{
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
-  position: relative;
+  font-size: 0.75rem;
   
-  font-size: 0.55rem;
+  
+
+}
+
+#dailyheading{ 
+  font-size: 1.5rem;
+  margin: 0;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-family: "Spline Sans", sans-serif;
+  font-weight: 450;
+  
 
 }
 
